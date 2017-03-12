@@ -1,0 +1,89 @@
+{
+	"id": "5e963f1f-630b-dbf8-09b7-4547894400c2",
+	"name": "HW3",
+	"description": "",
+	"order": [
+		"bed241a4-9587-a1e4-a7c6-e9ed90d32e1a",
+		"c9cb2882-4616-32ab-b18a-3857358831d9",
+		"3f232442-af0d-dd03-9981-fb813b67b92f"
+	],
+	"folders": [],
+	"timestamp": 1489106651654,
+	"owner": "1510738",
+	"public": false,
+	"requests": [
+		{
+			"id": "3f232442-af0d-dd03-9981-fb813b67b92f",
+			"headers": "Authorization: 1234\n",
+			"url": "https://colechristenson11-test.apigee.net/hw3",
+			"pathVariables": {},
+			"preRequestScript": null,
+			"method": "GET",
+			"collectionId": "5e963f1f-630b-dbf8-09b7-4547894400c2",
+			"data": null,
+			"dataMode": "params",
+			"name": "get with invalid oauth",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1489298975637,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {}
+		},
+		{
+			"id": "bed241a4-9587-a1e4-a7c6-e9ed90d32e1a",
+			"headers": "",
+			"url": "https://colechristenson11-test.apigee.net/oauth/client_credential/accesstoken?grant_type=client_credentials",
+			"pathVariables": {},
+			"preRequestScript": null,
+			"method": "POST",
+			"collectionId": "5e963f1f-630b-dbf8-09b7-4547894400c2",
+			"data": [
+				{
+					"key": "client_id",
+					"value": "rKNLMyPy4ZrnSYmEQfbbAxn9BZGkfjVH",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "client_secret",
+					"value": "fedmW3qxrkcqvp6X",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "urlencoded",
+			"name": "POST to oauth",
+			"description": "gets token needed from oauth",
+			"descriptionFormat": "html",
+			"time": 1489106976961,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {}
+		},
+		{
+			"id": "c9cb2882-4616-32ab-b18a-3857358831d9",
+			"headers": "Authorization: token\n",
+			"url": "https://colechristenson11-test.apigee.net/hw3",
+			"pathVariables": {},
+			"preRequestScript": null,
+			"method": "GET",
+			"collectionId": "5e963f1f-630b-dbf8-09b7-4547894400c2",
+			"data": null,
+			"dataMode": "params",
+			"name": "gets name from github",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1489293912505,
+			"version": 2,
+			"responses": [],
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;",
+			"currentHelper": "normal",
+			"helperAttributes": {}
+		}
+	]
+}
